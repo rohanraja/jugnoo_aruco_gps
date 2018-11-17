@@ -206,6 +206,8 @@ catkin_package(
  LIBRARIES 
 )
 
+set(CMAKE_CXX_FLAGS "-fpermissive -std=c++0x")
+
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 add_dependencies(${PROJECT_NAME} ${catkin_EXPORTED_TARGETS} aruco_mapping_gencpp )
 target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS} ${ROS_LIBRARIES} ${catkin_LIBRARIES})

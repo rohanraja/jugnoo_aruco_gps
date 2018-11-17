@@ -70,7 +70,7 @@ ArucoMapping::ArucoMapping(ros::NodeHandle *nh) :
   
     
   //ROS publishers
-  camera_pub_ = nh->advertise<geometry_msgs::PoseStamped>("aruco_camera_pose",1);
+  camera_pub_ = nh->advertise<geometry_msgs::PoseStamped>("/mavros/vision_pose/pose",1);
           
   //Initialize OpenCV window
   cv::namedWindow("Mono8", CV_WINDOW_AUTOSIZE);       
@@ -163,7 +163,7 @@ ArucoMapping::publishCamera(geometry_msgs::Pose marker_pose)
 
   msg_pose.header.stamp = ros::Time::now();
 
-  msg_pose.header.frame_id = "world";
+  msg_pose.header.frame_id = "map";
 
   msg_pose.pose = marker_pose;
 
