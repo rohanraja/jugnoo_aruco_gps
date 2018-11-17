@@ -43,11 +43,11 @@ main(int argc, char **argv)
       
   // Aruco mapping object
   aruco_mapping::ArucoMapping obj(&nh);
-  obj.imageReader();
+  // obj.imageReader();
 
-  // // Image node and subscriber
-  // image_transport::ImageTransport it(nh);
-  // image_transport::Subscriber img_sub = it.subscribe("/image_raw", 1, &aruco_mapping::ArucoMapping::imageCallback, &obj);
+  // Image node and subscriber
+  image_transport::ImageTransport it(nh);
+  image_transport::Subscriber img_sub = it.subscribe("/image_raw", 1, &aruco_mapping::ArucoMapping::imageCallback, &obj);
 
   ros::spin();
 

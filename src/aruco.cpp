@@ -28,8 +28,8 @@ public:
         fs["camera_matrix"] >> camera_matrix;
         fs["distortion_coefficients"] >> dist_coeffs;
         
-        std::cout << "camera_matrix\n" << camera_matrix << std::endl;
-        std::cout << "\ndist coeffs\n" << dist_coeffs << std::endl;
+        // std::cout << "camera_matrix\n" << camera_matrix << std::endl;
+        // std::cout << "\ndist coeffs\n" << dist_coeffs << std::endl;
         
     }
     void detect(cv::Mat image, geometry_msgs::Pose &pose)
@@ -87,8 +87,8 @@ public:
                 getQuaternion(R, qq);
 
                 std::cout << rvecs[0] << "\n";
-                std::cout << R << "\n";
-                std::cout << qq << "\n";
+                // std::cout << R << "\n";
+                // std::cout << qq << "\n";
                 // q.setRPY( rvecs[0](2), rvecs[0](1), rvecs[0](0) );  // Create this quaternion from roll/pitch/yaw (in radians)
 
                 // pose.orientation.x = q.getX();
